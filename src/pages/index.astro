@@ -1,25 +1,62 @@
 ---
 import '../styles/global.css';
 import Hero from '../components/Hero/Hero.astro';
-import Boxes from '../components/Boxes/Boxes.astro';
-import MotionPath from '../components/MotionPath/MotionPath.astro';
-import Physics from '../components/Physics/Physics.astro';
-import ScrollPin from '../components/ScrollPin/ScrollPin.astro';
+import Rivalry from '../components/Rivalry/Rivalry.astro';
+import Stats from '../components/Stats/Stats.astro';
+import FaceOff from '../components/FaceOff/FaceOff.astro';
+import Shootout from '../components/Shootout/Shootout.astro';
+import Ticket from '../components/Ticket/Ticket.astro';
+import Footer from '../components/Footer/Footer.astro';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro + GSAP</title>
+		<title>Argentina vs England — World Cup 2026 Semi-final · Match Day</title>
+		<meta
+			name="description"
+			content="Sixty years of needle, one semi-final. Argentina vs England, July 15 2026, Atlanta. Relive the rivalry, take the penalties, be there."
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&family=Space+Mono:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<Hero />
-		<Boxes />
-		<MotionPath />
-		<Physics />
-		<ScrollPin />
+		<div class="topbar" aria-hidden="true">
+			<span><span class="live-dot"></span>Match day</span>
+			<span>WC26 · Semi-final 2</span>
+			<span>ATL · 3PM ET</span>
+		</div>
+		<div class="grain" aria-hidden="true"></div>
+
+		<div id="smooth-wrapper">
+			<div id="smooth-content">
+				<Hero />
+				<Rivalry />
+				<Stats />
+				<FaceOff />
+				<Shootout />
+				<Ticket />
+				<Footer />
+			</div>
+		</div>
+
+		<script>
+			import { ScrollSmoother } from '../lib/gsap.js';
+
+			ScrollSmoother.create({
+				wrapper: '#smooth-wrapper',
+				content: '#smooth-content',
+				smooth: 1.1,
+				ignoreMobileResize: true,
+				normalizeScroll: false,
+			});
+		</script>
 	</body>
 </html>

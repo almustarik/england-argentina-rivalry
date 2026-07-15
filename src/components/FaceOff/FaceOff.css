@@ -1,0 +1,99 @@
+.faceoff {
+  max-width: 76rem;
+  margin: 0 auto;
+}
+
+.faceoff-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  perspective: 1200px;
+}
+
+.faceoff-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(160deg, rgba(242, 239, 230, 0.04), rgba(242, 239, 230, 0.01));
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.faceoff-card-arg {
+  border-top: 3px solid var(--arg);
+}
+
+.faceoff-card-eng {
+  border-top: 3px solid var(--eng);
+}
+
+.faceoff-card-inner {
+  padding: clamp(1.5rem, 3.5vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transform: translateZ(30px);
+}
+
+.faceoff-number {
+  font-size: clamp(4rem, 9vw, 7.5rem);
+  line-height: 1;
+  opacity: 0.15;
+}
+
+.faceoff-card-arg .faceoff-number {
+  color: var(--arg);
+}
+
+.faceoff-card-eng .faceoff-number {
+  color: var(--eng);
+}
+
+.faceoff-card h3 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.faceoff-role {
+  font-size: 0.7rem;
+  color: var(--ink-dim);
+}
+
+.faceoff-line {
+  color: var(--ink-dim);
+  max-width: 38ch;
+}
+
+.faceoff-stats {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+}
+
+.faceoff-stats li::before {
+  content: "▸ ";
+  color: var(--gold);
+}
+
+.faceoff-vs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  color: var(--gold);
+  text-shadow: 0 0 30px rgba(242, 193, 78, 0.4);
+  pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  .faceoff-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faceoff-vs {
+    display: none;
+  }
+}

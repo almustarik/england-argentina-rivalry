@@ -1,0 +1,156 @@
+.shootout {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.shootout-sub {
+  color: var(--ink-dim);
+  max-width: 48ch;
+  margin: -2rem 0 2.5rem;
+}
+
+.shootout-sub strong {
+  color: var(--ink);
+}
+
+.shootout-stage {
+  position: relative;
+  height: min(78vh, 640px);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 120% 55% at 50% 0%, rgba(46, 194, 126, 0.1), transparent 60%),
+    linear-gradient(180deg, #0a1210 0%, var(--bg-2) 100%);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.shootout-score {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--gold);
+}
+
+.shootout-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.shootout-dots .dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  border: 1px solid var(--ink-dim);
+}
+
+.shootout-dots .dot.is-goal {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.shootout-dots .dot.is-miss {
+  background: var(--eng);
+  border-color: var(--eng);
+  opacity: 0.7;
+}
+
+.shootout-goal {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(64%, 460px);
+  aspect-ratio: 400 / 150;
+}
+
+.shootout-goal > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.shootout-keeper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -6.5%; /* center without transform — GSAP owns this element's transform */
+  width: 13%;
+  will-change: transform;
+}
+
+.shootout-result {
+  position: absolute;
+  top: 46%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  color: var(--gold);
+  pointer-events: none;
+  z-index: 6;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
+}
+
+.shootout-spot {
+  position: absolute;
+  bottom: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3.2rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.shootout-ball {
+  position: absolute;
+  bottom: 14%;
+  left: 50%;
+  margin-left: -2rem; /* center a 4rem ball on the spot */
+  width: 4rem;
+  cursor: grab;
+  z-index: 4;
+  will-change: transform;
+  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.5));
+}
+
+.shootout-ball:active {
+  cursor: grabbing;
+}
+
+.shootout-reset {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: 0.75rem;
+  background: rgba(6, 8, 12, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.shootout-reset:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.confetti {
+  position: absolute;
+  width: 0.55rem;
+  height: 0.9rem;
+  z-index: 5;
+  pointer-events: none;
+}

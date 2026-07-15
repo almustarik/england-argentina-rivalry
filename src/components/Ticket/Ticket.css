@@ -1,0 +1,91 @@
+.ticket-section {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.ticket {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(108, 172, 228, 0.07), rgba(224, 52, 74, 0.06));
+  overflow: hidden;
+  will-change: transform;
+}
+
+.ticket-main {
+  padding: clamp(1.75rem, 4vw, 3.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ticket-main h3 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+}
+
+.ticket-vs {
+  font-size: 0.9rem;
+  color: var(--gold);
+  letter-spacing: 0.5em;
+}
+
+.ticket-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1rem 2rem;
+  font-size: 0.78rem;
+  margin-top: 0.5rem;
+}
+
+.ticket-meta span {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--ink-dim);
+  margin-bottom: 0.2rem;
+}
+
+.ticket-stub {
+  border-left: 2px dashed var(--line);
+  padding: clamp(1.75rem, 3vw, 2.75rem) clamp(1.25rem, 2.5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-width: 11rem;
+}
+
+.ticket-stub-info {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+.ticket-stub-info span {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--ink-dim);
+}
+
+.ticket-barcode {
+  width: 100%;
+  color: var(--ink);
+  opacity: 0.85;
+}
+
+.ticket-serial {
+  font-size: 0.62rem;
+  color: var(--ink-dim);
+}
+
+@media (max-width: 680px) {
+  .ticket {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-stub {
+    border-left: none;
+    border-top: 2px dashed var(--line);
+  }
+}

@@ -1,0 +1,45 @@
+---
+import './Stats.css';
+
+const rows = [
+	{ label: 'World Cup titles', arg: 3, eng: 1 },
+	{ label: 'World Cup meetings won', arg: 1, eng: 3 },
+	{ label: 'Goals in those meetings', arg: 5, eng: 8 },
+	{ label: 'Shootouts won head-to-head', arg: 1, eng: 0 },
+	{ label: 'Semi-finals reached', arg: 6, eng: 4 },
+];
+---
+
+<section class="section stats" id="stats">
+	<div class="section-head">
+		<span class="num">02</span>
+		<h2>The tale<br />of the tape</h2>
+	</div>
+
+	<div class="stats-legend mono">
+		<span class="stats-legend-arg">Argentina</span>
+		<span class="stats-legend-eng">England</span>
+	</div>
+
+	<div class="stats-rows">
+		{rows.map((r) => (
+			<div class="stats-row" data-arg={r.arg} data-eng={r.eng}>
+				<span class="stats-val stats-val-arg mono" data-target={r.arg}>0</span>
+				<div class="stats-mid">
+					<p class="stats-label mono">{r.label}</p>
+					<div class="stats-bar">
+						<div class="stats-fill stats-fill-arg"></div>
+						<div class="stats-fill stats-fill-eng"></div>
+					</div>
+				</div>
+				<span class="stats-val stats-val-eng mono" data-target={r.eng}>0</span>
+			</div>
+		))}
+	</div>
+
+	<p class="stats-note mono">World Cup finals meetings only: 1962 · 1966 · 1986 · 1998 · 2002</p>
+</section>
+
+<script>
+	import './Stats.js';
+</script>

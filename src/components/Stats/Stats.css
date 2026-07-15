@@ -1,0 +1,91 @@
+.stats {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.stats-legend {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  margin-bottom: 1.25rem;
+}
+
+.stats-legend-arg {
+  color: var(--arg);
+}
+
+.stats-legend-eng {
+  color: var(--eng);
+}
+
+.stats-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr 3.5rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.stats-val {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.stats-val-arg {
+  color: var(--arg);
+}
+
+.stats-val-eng {
+  color: var(--eng);
+  text-align: right;
+}
+
+.stats-mid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.stats-label {
+  font-size: 0.7rem;
+  color: var(--ink-dim);
+  text-align: center;
+}
+
+.stats-bar {
+  position: relative;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(242, 239, 230, 0.07);
+  overflow: hidden;
+}
+
+/* fills are anchored at opposite ends and meet at the proportional split */
+.stats-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.stats-fill-arg {
+  left: 0;
+  background: var(--arg);
+  transform-origin: left center;
+}
+
+.stats-fill-eng {
+  right: 0;
+  background: var(--eng);
+  transform-origin: right center;
+}
+
+.stats-note {
+  margin-top: 3rem;
+  font-size: 0.65rem;
+  color: var(--ink-dim);
+  text-align: center;
+}

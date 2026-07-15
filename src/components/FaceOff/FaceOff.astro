@@ -1,0 +1,50 @@
+---
+import './FaceOff.css';
+
+const players = [
+	{
+		side: 'arg',
+		name: 'Lionel Messi',
+		number: '10',
+		role: 'Captain · Forward',
+		line: 'The last dance. One more night under the lights, one more chance to bend a World Cup to his will.',
+		stats: ['8 goals — leads the Golden Boot race', '21 World Cup goals, the all-time record', '39 years young · sixth World Cup'],
+	},
+	{
+		side: 'eng',
+		name: 'Harry Kane',
+		number: '9',
+		role: 'Captain · Striker',
+		line: 'England’s record scorer, still chasing the one medal that matters. Tonight the wait could end.',
+		stats: ['6 goals this tournament', 'Level with Bellingham on six', 'Most goals of the group stage'],
+	},
+];
+---
+
+<section class="section faceoff" id="faceoff">
+	<div class="section-head">
+		<span class="num">03</span>
+		<h2>Two captains,<br />one final spot</h2>
+	</div>
+
+	<div class="faceoff-grid">
+		{players.map((p) => (
+			<article class={`faceoff-card faceoff-card-${p.side}`}>
+				<div class="faceoff-card-inner">
+					<span class="faceoff-number display" aria-hidden="true">{p.number}</span>
+					<h3 class="display">{p.name}</h3>
+					<p class="faceoff-role mono">{p.role}</p>
+					<p class="faceoff-line">{p.line}</p>
+					<ul class="faceoff-stats mono">
+						{p.stats.map((s) => <li>{s}</li>)}
+					</ul>
+				</div>
+			</article>
+		))}
+		<span class="faceoff-vs display" aria-hidden="true">VS</span>
+	</div>
+</section>
+
+<script>
+	import './FaceOff.js';
+</script>

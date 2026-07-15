@@ -1,4 +1,25 @@
-# GSAP, Astro & Webflow Cloud
+# Match Day — Argentina vs England · World Cup 2026
+
+An entry for the **Webflow × GSAP × CodeTV "build the best landing page" hackathon**: a match-day hype page for the real World Cup 2026 semi-final between Argentina and England — July 15, 2026, 3PM EDT, Mercedes-Benz Stadium, Atlanta.
+
+Unofficial fan project. Not affiliated with FIFA, the AFA, or the FA.
+
+## What's on the page
+
+| Section | GSAP features |
+| :--- | :--- |
+| Hero | SplitText headline reveal, live countdown with ScrambleText, Draggable + Inertia football, infinite marquee |
+| Sixty Years of Needle | Pinned, scrubbed ScrollTrigger timeline of the rivalry (1966 → 2002) with DrawSVG shot trajectories and a MotionPath ball on a pitch diagram |
+| Tale of the Tape | Scroll-triggered tug-of-war stat bars and count-up numbers |
+| Two Captains | Pointer-follow 3D tilt cards (quickTo), wing-entrance reveals |
+| Settle It Yourself | Playable penalty shootout: flick the Draggable ball (InertiaPlugin velocity), diving keeper, Physics2D confetti, ScrambleText verdicts |
+| Ticket + Footer | Staggered barcode reveal, gradient sign-off, counter-rotating marquee |
+
+Everything runs through ScrollSmoother for buttery scrolling.
+
+---
+
+## The starter this is built on
 
 Astro app template with [GSAP](https://gsap.com/) loaded and ready to use, set up for Webflow Cloud. All GSAP plugins — including the formerly premium Club GSAP plugins, which are now 100% free for everyone (including commercial use) thanks to Webflow — are registered and available. Just import what you need from `src/lib/gsap.js`.
 

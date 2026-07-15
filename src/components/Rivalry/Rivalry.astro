@@ -1,0 +1,83 @@
+---
+import './Rivalry.css';
+
+const moments = [
+	{
+		year: '1966',
+		title: 'The quarter-final that started it all',
+		text: 'Wembley. Rattín refuses to leave the pitch after his sending-off. Geoff Hurst heads England through, and a rivalry is born on both sides of the Atlantic.',
+		score: 'ENG 1 — 0 ARG',
+	},
+	{
+		year: '1986',
+		title: 'The Hand of God & the Goal of the Century',
+		text: 'Four minutes apart in Mexico City, Maradona scores the most infamous and the most beautiful goals in World Cup history. Watch the run — half the pitch, five defenders, one legend.',
+		score: 'ARG 2 — 1 ENG',
+	},
+	{
+		year: '1998',
+		title: 'St-Étienne: the night of everything',
+		text: 'An 18-year-old Michael Owen slaloms through, Beckham sees red, and a dramatic shootout sends Argentina through. Arguably the greatest World Cup knockout tie ever played.',
+		score: 'ARG 2 — 2 ENG · 4—3 pens',
+	},
+	{
+		year: '2002',
+		title: 'Beckham’s redemption',
+		text: 'Sapporo. Four years of tabloid fury end with one swing of Beckham’s right boot from the penalty spot. England win the group-stage grudge match.',
+		score: 'ENG 1 — 0 ARG',
+	},
+];
+---
+
+<section class="rivalry" id="rivalry">
+	<div class="rivalry-inner">
+		<div class="section-head">
+			<span class="num">01</span>
+			<h2>Sixty years<br />of needle</h2>
+		</div>
+
+		<div class="rivalry-stage">
+			<div class="rivalry-years display" aria-hidden="true">
+				{moments.map((m, i) => <span class="rivalry-year" data-i={i}>{m.year}</span>)}
+			</div>
+
+			<div class="rivalry-panels">
+				{moments.map((m, i) => (
+					<article class="rivalry-panel" data-i={i}>
+						<p class="kicker">{m.year}</p>
+						<h3 class="display">{m.title}</h3>
+						<p class="rivalry-text">{m.text}</p>
+						<p class="rivalry-score mono">{m.score}</p>
+					</article>
+				))}
+			</div>
+
+			<div class="rivalry-pitch-wrap">
+				<svg class="rivalry-pitch" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+					<!-- pitch -->
+					<rect x="4" y="4" width="292" height="192" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" />
+					<line x1="150" y1="4" x2="150" y2="196" stroke="currentColor" stroke-width="1.5" />
+					<circle cx="150" cy="100" r="26" fill="none" stroke="currentColor" stroke-width="1.5" />
+					<rect x="4" y="56" width="44" height="88" fill="none" stroke="currentColor" stroke-width="1.5" />
+					<rect x="252" y="56" width="44" height="88" fill="none" stroke="currentColor" stroke-width="1.5" />
+					<rect x="4" y="80" width="16" height="40" fill="none" stroke="currentColor" stroke-width="1.5" />
+					<rect x="280" y="80" width="16" height="40" fill="none" stroke="currentColor" stroke-width="1.5" />
+
+					<!-- trajectories (drawn per moment) -->
+					<g class="rivalry-paths" fill="none" stroke-width="2.5" stroke-linecap="round">
+						<path class="traj" data-i="0" d="M255 30 C 230 60, 260 85, 282 96" stroke="var(--eng)" />
+						<path class="traj" data-i="1" d="M120 170 C 160 150, 150 120, 190 115 S 230 140, 252 118 S 270 100, 284 102" stroke="var(--arg)" />
+						<path class="traj" data-i="2" d="M150 60 C 190 55, 215 75, 240 85 S 270 95, 285 92" stroke="var(--eng)" />
+						<path class="traj" data-i="3" d="M262 100 C 272 100, 278 92, 286 90" stroke="var(--eng)" />
+					</g>
+
+					<circle class="rivalry-ball" r="4.5" cx="0" cy="0" fill="var(--ink)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	import './Rivalry.js';
+</script>

@@ -2,24 +2,45 @@
 import './Hero.css';
 ---
 
-<header class="hero">
-	<h1 id="title">Astro &times; GSAP</h1>
-	<p id="subtitle">Every plugin registered. Scroll, drag, move.</p>
-	<div class="hero-actions">
-		<a
-			class="hero-deploy"
-			href="https://webflow.com/dashboard/cloud/deploy?repo=https://github.com/webflow-examples/astro-gsap"
-		>
-			<img src="https://webflow.com/img/deploy-dark.svg" alt="Deploy to Webflow" />
-		</a>
-		<a class="hero-cheatsheet" href="https://gsap.com/cheatsheet/">
-			GSAP Cheatsheet <span aria-hidden="true">👀</span>
-		</a>
-		<a class="hero-cheatsheet" href="https://docs.astro.build/">
-			Astro Docs <span aria-hidden="true">🚀</span>
-		</a>
+<header class="hero" id="hero">
+	<div class="hero-glow hero-glow-arg" aria-hidden="true"></div>
+	<div class="hero-glow hero-glow-eng" aria-hidden="true"></div>
+
+	<p class="kicker hero-kicker">World Cup 2026 · Semi-final · Mercedes-Benz Stadium, Atlanta</p>
+
+	<h1 class="hero-title display" aria-label="Argentina versus England">
+		<span class="hero-line hero-line-arg">Argentina</span>
+		<span class="hero-line hero-line-vs mono">— vs —</span>
+		<span class="hero-line hero-line-eng">England</span>
+	</h1>
+
+	<div class="hero-countdown mono" aria-live="off">
+		<span class="hero-countdown-label">Kickoff in</span>
+		<span class="hero-countdown-time" id="countdown">00:00:00</span>
 	</div>
+
+	<div class="hero-ball" id="hero-ball" title="Give it a kick">
+		<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			<circle cx="50" cy="50" r="48" fill="#f2efe6" stroke="#06080c" stroke-width="2" />
+			<polygon points="50,32 66,44 60,63 40,63 34,44" fill="#06080c" />
+			<path d="M50 2 L50 32 M66 44 L94 36 M60 63 L74 88 M40 63 L26 88 M34 44 L6 36" stroke="#06080c" stroke-width="2.5" fill="none" />
+			<circle cx="50" cy="50" r="48" fill="none" stroke="#06080c" stroke-width="3" />
+		</svg>
+	</div>
+
+	<p class="hero-hint mono">↑ drag the ball · ↓ scroll for the story</p>
 </header>
+
+<div class="marquee" id="hero-marquee" aria-hidden="true">
+	<div class="marquee-track">
+		<span>
+			La Albiceleste <i class="sun">☀</i> The Three Lions <i class="sun">★</i>
+			Hand of God <i class="sun">☀</i> Goal of the Century <i class="sun">★</i>
+			St-Étienne 1998 <i class="sun">☀</i> Sapporo 2002 <i class="sun">★</i>
+			Tonight, a new chapter <i class="sun">☀</i>
+		</span>
+	</div>
+</div>
 
 <script>
 	import './Hero.js';

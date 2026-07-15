@@ -1,0 +1,62 @@
+---
+import './Shootout.css';
+---
+
+<section class="section shootout" id="shootout">
+	<div class="section-head">
+		<span class="num">04</span>
+		<h2>Settle it<br />yourself</h2>
+	</div>
+
+	<p class="shootout-sub">It might come down to penalties tonight. Warm up: <strong>flick the ball</strong> past the keeper. Best of five.</p>
+
+	<div class="shootout-stage" id="shootout-stage">
+		<div class="shootout-score mono">
+			<span id="shootout-tally">0 / 5</span>
+			<div class="shootout-dots" id="shootout-dots">
+				<span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+			</div>
+		</div>
+
+		<div class="shootout-goal" id="shootout-goal">
+			<svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+				<!-- net -->
+				<g stroke="rgba(242,239,230,0.18)" stroke-width="1">
+					{Array.from({ length: 15 }, (_, i) => <line x1={12 + i * 27} y1="6" x2={12 + i * 27} y2="144" />)}
+					{Array.from({ length: 6 }, (_, i) => <line x1="6" y1={10 + i * 26} x2="394" y2={10 + i * 26} />)}
+				</g>
+				<!-- frame -->
+				<path d="M6 148 L6 6 L394 6 L394 148" fill="none" stroke="var(--ink)" stroke-width="7" stroke-linecap="round" />
+			</svg>
+			<div class="shootout-keeper" id="shootout-keeper" aria-hidden="true">
+				<svg viewBox="0 0 60 90" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="30" cy="14" r="11" fill="#e8b04a" />
+					<rect x="16" y="27" width="28" height="42" rx="9" fill="#2ec27e" />
+					<rect x="2" y="30" width="13" height="9" rx="4.5" fill="#e8b04a" />
+					<rect x="45" y="30" width="13" height="9" rx="4.5" fill="#e8b04a" />
+					<rect x="19" y="70" width="9" height="18" rx="4" fill="#1b1f27" />
+					<rect x="32" y="70" width="9" height="18" rx="4" fill="#1b1f27" />
+				</svg>
+			</div>
+		</div>
+
+		<p class="shootout-result display" id="shootout-result" aria-live="polite"></p>
+
+		<div class="shootout-spot" aria-hidden="true"></div>
+
+		<div class="shootout-ball" id="shootout-ball" title="Drag back, flick forward">
+			<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+				<circle cx="50" cy="50" r="48" fill="#f2efe6" stroke="#06080c" stroke-width="2" />
+				<polygon points="50,32 66,44 60,63 40,63 34,44" fill="#06080c" />
+				<path d="M50 2 L50 32 M66 44 L94 36 M60 63 L74 88 M40 63 L26 88 M34 44 L6 36" stroke="#06080c" stroke-width="2.5" fill="none" />
+				<circle cx="50" cy="50" r="48" fill="none" stroke="#06080c" stroke-width="3" />
+			</svg>
+		</div>
+
+		<button class="shootout-reset mono" id="shootout-reset" hidden>Take five more →</button>
+	</div>
+</section>
+
+<script>
+	import './Shootout.js';
+</script>

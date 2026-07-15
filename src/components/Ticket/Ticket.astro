@@ -1,0 +1,40 @@
+---
+import './Ticket.css';
+---
+
+<section class="section ticket-section" id="ticket">
+	<div class="section-head">
+		<span class="num">05</span>
+		<h2>Tonight.<br />Be there.</h2>
+	</div>
+
+	<div class="ticket" id="ticket-card">
+		<div class="ticket-main">
+			<p class="kicker">World Cup 2026 · Semi-final 2</p>
+			<h3 class="display">Argentina<br /><span class="ticket-vs mono">vs</span><br />England</h3>
+			<div class="ticket-meta mono">
+				<div><span>Date</span>Wed · Jul 15 · 2026</div>
+				<div><span>Kickoff</span>3:00 PM EDT</div>
+				<div><span>Venue</span>Mercedes-Benz Stadium, Atlanta</div>
+				<div><span>At stake</span>Spain await in Sunday's final</div>
+			</div>
+		</div>
+		<div class="ticket-stub">
+			<div class="ticket-stub-info mono">
+				<div><span>Gate</span>10</div>
+				<div><span>Row</span>M</div>
+				<div><span>Seat</span>86</div>
+			</div>
+			<svg class="ticket-barcode" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+				{Array.from({ length: 30 }, (_, i) => (
+					<rect class="bar" x={i * 4} y="0" width={(i * 7) % 3 === 0 ? 2.5 : 1.2} height="40" fill="currentColor" />
+				))}
+			</svg>
+			<p class="mono ticket-serial">Nº 1986-2026</p>
+		</div>
+	</div>
+</section>
+
+<script>
+	import './Ticket.js';
+</script>
