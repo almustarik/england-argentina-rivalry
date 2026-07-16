@@ -53,15 +53,18 @@ media.add("(max-width: 820px)", () => {
   gsap.set(paths, { autoAlpha: 0.55, drawSVG: "100%" });
   gsap.set(ball, { autoAlpha: 0 });
 
+  // content-first on mobile: never gate visibility on a tween — only drift
+  // panels in, so a missed frame/trigger can't leave the section blank
+  gsap.set(panels, { clearProps: "opacity,visibility" });
+
   panels.forEach((panel) => {
     gsap.from(panel, {
-      autoAlpha: 0,
-      y: 28,
+      y: 32,
       duration: 0.65,
       ease: "power2.out",
       scrollTrigger: {
         trigger: panel,
-        start: "top 88%",
+        start: "top 92%",
         once: true,
       },
     });
