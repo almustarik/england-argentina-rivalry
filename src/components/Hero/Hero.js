@@ -1,6 +1,6 @@
 import { gsap, SplitText, Draggable } from "../../lib/gsap.js";
 
-const KICKOFF = new Date("2026-07-15T15:00:00-04:00"); // 3PM EDT, Atlanta
+const KICKOFF = new Date("2026-07-19T15:00:00-04:00"); // the final: 3PM EDT, MetLife Stadium
 
 // --- intro ---
 const argSplit = SplitText.create(".hero-line-arg", { type: "chars" });

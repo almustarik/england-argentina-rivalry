@@ -22,7 +22,7 @@
   background:
     radial-gradient(ellipse 120% 55% at 50% 0%, rgba(46, 194, 126, 0.1), transparent 60%),
     linear-gradient(180deg, #0a1210 0%, var(--bg-2) 100%);
-  touch-action: none;
+  touch-action: pan-y;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -121,6 +121,7 @@
   z-index: 4;
   will-change: transform;
   filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.5));
+  touch-action: none;
 }
 
 .shootout-ball:active {

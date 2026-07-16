@@ -104,18 +104,58 @@
 }
 
 @media (max-width: 820px) {
+  .rivalry-inner {
+    min-height: auto;
+    display: block;
+    padding-block: 5rem;
+  }
+
+  .rivalry .section-head {
+    margin-bottom: 2.5rem;
+  }
+
   .rivalry-stage {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .rivalry-panels {
-    min-height: 17rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap: 0;
   }
 
-  .rivalry-year {
-    font-size: clamp(10rem, 44vw, 16rem);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(242, 239, 230, 0.14);
+  .rivalry-panel {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    min-height: 0;
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .rivalry-panel:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .rivalry-panel h3 {
+    max-width: 15ch;
+    font-size: clamp(1.9rem, 9vw, 2.75rem);
+  }
+
+  .rivalry-years {
+    display: none;
+  }
+
+  .rivalry-pitch-wrap {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .rivalry-pitch .traj {
+    filter: drop-shadow(0 0 5px currentColor);
   }
 }

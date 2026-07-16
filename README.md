@@ -1,6 +1,6 @@
 # Match Day — Argentina vs England · World Cup 2026
 
-An entry for the **Webflow × GSAP × CodeTV "build the best landing page" hackathon**: a match-day hype page for the real World Cup 2026 semi-final between Argentina and England — July 15, 2026, 3PM EDT, Mercedes-Benz Stadium, Atlanta.
+An entry for the **Webflow × GSAP × CodeTV "build the best landing page" hackathon**: a hype page for the real World Cup 2026 semi-final between Argentina and England (July 15, 2026, Atlanta — Argentina won it 2–1 at the death), now counting down to the Argentina–Spain final.
 
 Unofficial fan project. Not affiliated with FIFA, the AFA, or the FA.
 
